@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>FR Event</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<style>
+			* {
+				margin: 0;
+				padding: 1;
+				font-family: "Lato", sans-serif;
+			}
+
+			body {
+				overflow-x: hidden;
+				-ms-overflow-style: none;
+				scrollbar-width: none;
+				overflow-y: scroll;
+				background-color: white;
+				font-family: 'Akshar', sans-serif;
+			}
+
+		.overlay-img {
+			height: 60%;
+			width: 30%;
+			position: absolute;
+			left:30%
+			top: 30%;
+			opacity: 0.5
+		}	
+
+		.webcam{
+			height: 60%;
+			width: 30%;
+			position: absolute;
+			left:30%
+			top: 30%%;
+		}
+
+		.button{
+			margin-top:10px;
+			padding:0px;
+            display: inline-block;
+            height: 29px;
+            width: 100%%;
+            background-color: #38af48;
+            border: red;
+            border-radius: 5px;
+            font-family: 'Akshar', sans-serif;
+            font-size: 25px;
+            font-weight: 500;
+            color: black;
+            cursor: pointer;
+		}
+		</style>
+		</head>
+
+<body>
+<div class="container">
+
+    <div class="row">
+        <div class="col-lg-8  offset-lg-2">
+
+			
+            <h2 class="mt-5" style="background:#00549f; color:white; font-size:50px; font-weight:bold">Webcam Video Recorder<h2>
+			<form method="post" action="{{ url_for('tasks') }}">
+			<input type="submit" value="Start/Stop Recording" name="rec" class="button" />
+			<div>
+			<br>
+            </a>
+				<h3 style="font-family:courier;">Instructions:</h3>
+				<ol style="font-family:courier;" position="inline">
+				<h4>Start/Stop Recording--Toggle between starting and stopping video recording</h4> </ol>
+			</div>
+			</form>
+            <img src="{{ url_for('video_feed') }}" class="webcam">
+			<img src="../static/overlay.png" class="overlay-img">
+
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
